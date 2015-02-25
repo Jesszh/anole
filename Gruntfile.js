@@ -13,7 +13,10 @@ module.exports = function(grunt) {
     };
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        banner: '/*!\n' + ' * Anole v<%= pkg.version %> (<%= pkg.homepage %>)\n' + ' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' + ' */\n',
+        banner: 
+            '/*!\n' + ' * Anole v<%= pkg.version %> (<%= pkg.homepage %>)\n' + 
+            ' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' + 
+            ' */\n',
         stylus: {
             options: {
                 'compress': false,

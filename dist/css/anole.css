@@ -5,3 +5,11 @@
 body {
   font: 12px/1.5 "Heiti SC", simhei;
 }
+body:before,
+body:after {
+  content: " ";
+  display: table;
+}
+body:after {
+  clear: both;
+}
