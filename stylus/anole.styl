@@ -1,6 +1,25 @@
-@import 'mixin/clearfix'
+//default values
+fontSize = 14px
+fontFamily = 'Heiti Sc', simhei
+
+@import 'mixin/base'
+@import 'mixin/alert'
+@import 'mixin/buttons'
 
 body
-	font: 12px/1.5 "Heiti SC",simhei
+	font 12px/1.5 "Heiti SC",simhei
 	clearfix()
+	opacity(.8)
+	placeholder(#fff)
+
+.button-test
+	button-variant(#fff,#ccc,#aaa)
+
+.button-huge 
+	button-size(10px,10px,12px,24px,3px)
+
+.alert
+	alert-variant(red,red,red)
+
+
 	

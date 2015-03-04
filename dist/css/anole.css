@@ -4,12 +4,88 @@
  */
 body {
   font: 12px/1.5 "Heiti SC", simhei;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
 }
 body:before,
 body:after {
-  content: " ";
+  content: "";
   display: table;
 }
 body:after {
   clear: both;
+}
+body::-moz-placeholder {
+  color: #fff;
+}
+body::-webkit-input-placeholder {
+  color: #fff;
+}
+body:-ms-input-placeholder {
+  color: #fff;
+}
+.button-test {
+  color: #fff;
+  background-color: #ccc;
+  border-color: #aaa;
+}
+.button-test:hover,
+.button-test:focus,
+.button-test.focus,
+.button-test:active,
+.button-test.active,
+.open > .dropdown-toggle.button-test {
+  color: #fff;
+  background-color: #b8b8b8;
+  border-color: #969696;
+}
+.button-test:active,
+.button-test.active,
+.open > .dropdown-toggle.button-test {
+  background-image: none;
+}
+.button-test.disabled,
+.button-test[disabled],
+fieldset[disabled] .button-test,
+.button-test.disabled:hover,
+.button-test[disabled]:hover,
+fieldset[disabled] .button-test:hover,
+.button-test.disabled:focus,
+.button-test[disabled]:focus,
+fieldset[disabled] .button-test:focus,
+.button-test.disabled.focus,
+.button-test[disabled].focus,
+fieldset[disabled] .button-test.focus,
+.button-test.disabled:active,
+.button-test[disabled]:active,
+fieldset[disabled] .button-test:active,
+.button-test.disabled.active,
+.button-test[disabled].active,
+fieldset[disabled] .button-test.active {
+  background-color: #ccc;
+  border-color: #aaa;
+}
+.button-test .badge {
+  color: #ccc;
+  background-color: #fff;
+}
+.button-huge {
+  padding: 10px 10px;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 3px;
+}
+.alert {
+  background-color: #f00;
+  border-color: #f00;
+  color: #f00;
+}
+.alert hr {
+  border-top-color: #f20000;
+}
+.alert .alert-link {
+  color: #e60000;
 }

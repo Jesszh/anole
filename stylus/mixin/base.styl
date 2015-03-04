@@ -1,0 +1,106 @@
+// Sizing shortcuts
+size(width, height)
+  width width
+  height height
+
+square(size)
+  size(size size)
+
+// Center-align a block level element
+center-block() 
+  display block
+  margin-left auto
+  margin-right auto
+
+
+// Vendor
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+// Box-shadow
+box-shadow()
+  vendor('box-shadow', arguments)
+
+
+// Border-radius
+border-radius()
+  vendor('box-radius', arguments)
+
+
+// Opacity
+opacity(opacity)
+  vendor('opacity', opacity)
+  -ms-filter unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(opacity * 100) + ')"')
+  filter unquote('alpha(opacity=' + round(opacity * 100) + ')')
+
+// WebKit-style focus
+tab-focus()
+  // Default
+  outline thin dotted
+  // WebKit
+  outline 5px auto -webkit-focus-ring-color
+  outline-offset -2px
+
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+clearfix()
+  &:before
+  &:after
+    content "" // 1
+    display table // 2
+  &:after
+    clear both
+
+
+// Text overflow
+// Requires inline-block or block for proper styling
+text-overflow()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+
+// Typography
+text-emphasis-variant(color)
+  color color
+  a&:hover
+    color darken(@color, 10%)
+
+
+// CSS image replacement
+hide-text()
+  font "0/0" a
+  color transparent
+  text-shadow none
+  background-color transparent
+  border 0
+
+
+// Placeholder text
+placeholder(color = input-color-placeholder)
+  // Firefox
+  &::-moz-placeholder
+    color color
+  
+  &::-webkit-input-placeholder  
+  	color color // Safari and Chrome
+
+  &:-ms-input-placeholder 
+  	color color // Internet Explorer 10+
+
+
+
+
+

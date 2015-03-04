@@ -13,9 +13,9 @@ module.exports = function(grunt) {
     };
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        banner: 
-            '/*!\n' + ' * Anole v<%= pkg.version %> (<%= pkg.homepage %>)\n' + 
-            ' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' + 
+        banner:
+            '/*!\n' + ' * Anole v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
+            ' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' */\n',
         stylus: {
             options: {
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['stylus/*.styl'],
+                files: ['stylus/*.styl','stylus/mixin/*.styl'],
                 tasks: ['stylus']
             }
         }
