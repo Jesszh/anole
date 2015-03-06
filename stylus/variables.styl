@@ -2,47 +2,43 @@
 // --------------------------------------------------
 
 // Colors
-gray-base = #000
-gray-darker = lighten(gray-base, 13.5%) // #222
-gray-dark = lighten(gray-base, 20%)   // #333
-gray = lighten(gray-base, 33.5%) // #555
-gray-light = lighten(gray-base, 46.7%) // #777
-gray-lighter = lighten(gray-base, 93.5%) // #eee
+gray-darker = #383e43
+gray-dark = #5c6066
+gray = #555
+gray-light = #aab2bd
+gray-lighter = #ced3d6
 
-brand-primary = darken(#428bca, 6.5%) // #337ab7
-brand-success = #5cb85c
-brand-info = #5bc0de
-brand-warning = #f0ad4e
-brand-danger = #d9534f
+color-primary = #06b5ff
+color-success = #42c142
+color-info = #5bc0de
+color-warning = #f47400
+color-danger = #f2595c
+color-hightlight = #fffcd7
 
 
 // Scaffolding
 //
 //## Settings for some of the most global styles.
-
 body-bg = #fff
-
 text-color = gray-dark
-
-link-color = brand-primary
-
-link-hover-color = darken(link-color, 15%)
-
+link-color = color-primary
+link-hover-color = lighten(link-color, 15%)
 link-hover-decoration = none
 
 
 // Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-
-font-family-sans-serif = "Helvetica Neue", Helvetica, Arial, sans-serif
-font-family-serif = Georgia, "Times New Roman", Times, serif
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-font-family-monospace = Menlo, Monaco, Consolas, "Courier New", monospace
-font-family-base = font-family-sans-serif
+font-family-yahei = "Microsoft Yahei", "Heiti SC", simhei, Helvetica, sans-serif
+font-family-helvetica = Helveticalight, "Helvetica Neue", Helvetica, Arial, sans-serif
+font-family-monospace = Menlo, Monaco, Consolas, "Courier New", monospace // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+font-family-base = font-family-yahei
 
 font-size-base = 14px
+font-size-xxlarge = ceil((font-size-base * 1.58)) // ~22px
+font-size-xlarge = ceil((font-size-base * 1.45)) // ~20px
 font-size-large = ceil((font-size-base * 1.25)) // ~18px
+font-size-medium = floor((font-size-base * 1.15)) // ~16px
 font-size-small = ceil((font-size-base * 0.85)) // ~12px
 
 font-size-h1 = floor((font-size-base * 2.6)) // ~36px
@@ -52,10 +48,8 @@ font-size-h4 = ceil((font-size-base * 1.25)) // ~18px
 font-size-h5 = font-size-base
 font-size-h6 = ceil((font-size-base * 0.85)) // ~12px
 
-//** Unit-less `line-height` for use in components like buttons.
-line-height-base = 1.428571429 // 20/14
-//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-line-height-computed = floor((font-size-base * line-height-base)) // ~20px
+line-height-base = 18/12
+line-height-computed = floor((font-size-base * line-height-base))
 
 headings-font-family = inherit
 headings-font-weight = 400
@@ -65,20 +59,15 @@ headings-color = inherit
 
 // Iconography
 //
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
-
-//** Load fonts from this directory.
+//## Specify custom location and filename of the included Glyphicons icon font.
 icon-font-path = "../fonts/"
-//** File name for all font files.
 icon-font-name = "glyphicons-halflings-regular"
-//** Element ID within SVG icon file.
 icon-font-svg-id = "glyphicons_halflingsregular"
 
 
 // Components
 //
-//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
-
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.5 line-height.
 padding-base-vertical = 6px
 padding-base-horizontal = 12px
 
@@ -96,101 +85,76 @@ line-height-small = 1.5
 
 border-radius-base = 4px
 border-radius-large = 6px
-border-radius-small = 3px
+border-radius-small = 2px
 
-//** Global color for active items (e.g., navs or dropdowns).
 component-active-color = #fff
-//** Global background color for active items (e.g., navs or dropdowns).
-component-active-bg = brand-primary
+component-active-bg = color-primary
 
-//** Width of the `border` for generating carets that indicator dropdowns.
 caret-width-base = 4px
-//** Carets increase slightly in size for larger components.
 caret-width-large = 5px
 
 
-// = = Tables
+// Tables
 //
 //## Customizes the `.table` component with basic values, each used across all table variations.
 
-//** Padding for `<th>`s and `<td>`s.
-table-cell-padding = 8px
-//** Padding for cells in `.table-condensed`.
-table-condensed-cell-padding = 5px
+table-cell-padding = 8px // Padding for `<th>`s and `<td>`s.
+table-condensed-cell-padding = 5px // Padding for cells in `.table-condensed`.
 
-//** Default background color used for all tables.
 table-bg = transparent
-//** Background color used for `.table-striped`.
-table-bg-accent = #f9f9f9
-//** Background color used for `.table-hover`.
-table-bg-hover = #f5f5f5
+table-bg-accent = #f9f9f9 // Background color used for `.table-striped`.
+table-bg-hover = color-hightlight // Background color used for `.table-hover`.
 table-bg-active = table-bg-hover
-
-//** Border color for table and cell borders.
-table-border-color = #ddd
+table-border-color = gray-lighter
 
 
-// = = Buttons
+// Buttons
 //
-//## For each of Bootstrap's buttons, define text, background and border color.
+//## For each of status buttons, define text, background and border color.
 
 btn-font-weight = normal
 
-btn-default-color = #333
-btn-default-bg = #fff
-btn-default-border = #ccc
+btn-default-color = gray-dark
+btn-default-bg = #eeeeee
+btn-default-border = #eeeeee
 
 btn-primary-color = #fff
-btn-primary-bg = brand-primary
+btn-primary-bg = color-primary
 btn-primary-border = darken(btn-primary-bg, 5%)
 
 btn-success-color = #fff
-btn-success-bg = brand-success
+btn-success-bg = color-success
 btn-success-border = darken(btn-success-bg, 5%)
 
 btn-info-color = #fff
-btn-info-bg = brand-info
+btn-info-bg = color-info
 btn-info-border = darken(btn-info-bg, 5%)
 
 btn-warning-color = #fff
-btn-warning-bg = brand-warning
+btn-warning-bg = color-warning
 btn-warning-border = darken(btn-warning-bg, 5%)
 
 btn-danger-color = #fff
-btn-danger-bg = brand-danger
+btn-danger-bg = color-danger
 btn-danger-border = darken(btn-danger-bg, 5%)
 
 btn-link-disabled-color = gray-light
 
 
-// = = Forms
-//
-//##
+// Forms
 
-//** `<input>` background color
 input-bg = #fff
-//** `<input disabled>` background color
 input-bg-disabled = gray-lighter
 
-//** Text color for `<input>`s
 input-color = gray
-//** `<input>` border color
 input-border = #ccc
 
-// TODO = Rename `input-border-radius` to `input-border-radius-base` in v4
-//** Default `.form-control` border radius
-// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
 input-border-radius = border-radius-base
-//** Large `.form-control` border radius
 input-border-radius-large = border-radius-large
-//** Small `.form-control` border radius
 input-border-radius-small = border-radius-small
 
-//** Border color for inputs on focus
-input-border-focus = #66afe9
-
-//** Placeholder text color
-input-color-placeholder = #999
+input-color-border-focus = color-primary
+input-color-placeholder = gray-light
 
 //** Default `.form-control` height
 input-height-base = (line-height-computed + (padding-base-vertical * 2) + 2)
@@ -211,7 +175,7 @@ input-group-addon-border-color = input-border
 cursor-disabled = not-allowed
 
 
-// = = Dropdowns
+// Dropdowns
 //
 //## Dropdown menu container and contents.
 
@@ -276,7 +240,7 @@ grid-float-breakpoint = screen-sm-min
 grid-float-breakpoint-max = (grid-float-breakpoint - 1)
 
 
-// = = Container sizes
+// Container sizes
 //
 //## Define the maximum width of `.container` for different screen sizes.
 
@@ -296,7 +260,7 @@ container-large-desktop = (1140px + grid-gutter-width)
 container-lg = container-large-desktop
 
 
-// = = Navbar
+// Navbar
 //
 //##
 
@@ -322,9 +286,9 @@ navbar-default-link-disabled-color = #ccc
 navbar-default-link-disabled-bg = transparent
 
 // Navbar brand label
-navbar-default-brand-color = navbar-default-link-color
-navbar-default-brand-hover-color = darken(navbar-default-brand-color, 10%)
-navbar-default-brand-hover-bg = transparent
+navbar-default-color-color = navbar-default-link-color
+navbar-default-color-hover-color = darken(navbar-default-color-color, 10%)
+navbar-default-color-hover-bg = transparent
 
 // Navbar toggle
 navbar-default-toggle-hover-bg = #ddd
@@ -348,9 +312,9 @@ navbar-inverse-link-disabled-color = #444
 navbar-inverse-link-disabled-bg = transparent
 
 // Inverted navbar brand label
-navbar-inverse-brand-color = navbar-inverse-link-color
-navbar-inverse-brand-hover-color = #fff
-navbar-inverse-brand-hover-bg = transparent
+navbar-inverse-color-color = navbar-inverse-link-color
+navbar-inverse-color-hover-color = #fff
+navbar-inverse-color-hover-bg = transparent
 
 // Inverted navbar toggle
 navbar-inverse-toggle-hover-bg = #333
@@ -358,18 +322,18 @@ navbar-inverse-toggle-icon-bar-bg = #fff
 navbar-inverse-toggle-border-color = #333
 
 
-// = = Navs
+// Navs
 //
 //##
 
-// = = = Shared nav styles
+// = Shared nav styles
 nav-link-padding = 10px 15px
 nav-link-hover-bg = gray-lighter
 
 nav-disabled-link-color = gray-light
 nav-disabled-link-hover-color = gray-light
 
-// = = Tabs
+// Tabs
 nav-tabs-border-color = #ddd
 
 nav-tabs-link-hover-border-color = gray-lighter
@@ -381,13 +345,13 @@ nav-tabs-active-link-hover-border-color = #ddd
 nav-tabs-justified-link-border-color = #ddd
 nav-tabs-justified-active-link-border-color = body-bg
 
-// = = Pills
+// Pills
 nav-pills-border-radius = border-radius-base
 nav-pills-active-link-hover-bg = component-active-bg
 nav-pills-active-link-hover-color = component-active-color
 
 
-// = = Pagination
+// Pagination
 //
 //##
 
@@ -400,15 +364,15 @@ pagination-hover-bg = gray-lighter
 pagination-hover-border = #ddd
 
 pagination-active-color = #fff
-pagination-active-bg = brand-primary
-pagination-active-border = brand-primary
+pagination-active-bg = color-primary
+pagination-active-border = color-primary
 
 pagination-disabled-color = gray-light
 pagination-disabled-bg = #fff
 pagination-disabled-border = #ddd
 
 
-// = = Pager
+// Pager
 //
 //##
 
@@ -424,7 +388,7 @@ pager-active-color = pagination-active-color
 pager-disabled-color = pagination-disabled-color
 
 
-// = = Jumbotron
+// Jumbotron
 //
 //##
 
@@ -435,7 +399,7 @@ jumbotron-heading-color = inherit
 jumbotron-font-size = ceil((font-size-base * 1.5))
 
 
-// = = Form states and alerts
+// Form states and alerts
 //
 //## Define colors for form feedback states and, by default, alerts.
 
@@ -456,7 +420,7 @@ state-danger-bg = #f2dede
 state-danger-border = darken(spin(state-danger-bg, -10), 5%)
 
 
-// = = Tooltips
+// Tooltips
 //
 //##
 
@@ -474,7 +438,7 @@ tooltip-arrow-width = 5px
 tooltip-arrow-color = tooltip-bg
 
 
-// = = Popovers
+// Popovers
 //
 //##
 
@@ -503,22 +467,22 @@ popover-arrow-outer-color = fadein(popover-border-color, 5%)
 popover-arrow-outer-fallback-color = darken(popover-fallback-border-color, 20%)
 
 
-// = = Labels
+// Labels
 //
 //##
 
 //** Default label background color
 label-default-bg = gray-light
 //** Primary label background color
-label-primary-bg = brand-primary
+label-primary-bg = color-primary
 //** Success label background color
-label-success-bg = brand-success
+label-success-bg = color-success
 //** Info label background color
-label-info-bg = brand-info
+label-info-bg = color-info
 //** Warning label background color
-label-warning-bg = brand-warning
+label-warning-bg = color-warning
 //** Danger label background color
-label-danger-bg = brand-danger
+label-danger-bg = color-danger
 
 //** Default label text color
 label-color = #fff
@@ -526,7 +490,7 @@ label-color = #fff
 label-link-hover-color = #fff
 
 
-// = = Modals
+// Modals
 //
 //##
 
@@ -559,7 +523,7 @@ modal-md = 600px
 modal-sm = 300px
 
 
-// = = Alerts
+// Alerts
 //
 //## Define alert colors, border radius, and padding.
 
@@ -584,7 +548,7 @@ alert-danger-text = state-danger-text
 alert-danger-border = state-danger-border
 
 
-// = = Progress bars
+// Progress bars
 //
 //##
 
@@ -596,18 +560,18 @@ progress-bar-color = #fff
 progress-border-radius = border-radius-base
 
 //** Default progress bar color
-progress-bar-bg = brand-primary
+progress-bar-bg = color-primary
 //** Success progress bar color
-progress-bar-success-bg = brand-success
+progress-bar-success-bg = color-success
 //** Warning progress bar color
-progress-bar-warning-bg = brand-warning
+progress-bar-warning-bg = color-warning
 //** Danger progress bar color
-progress-bar-danger-bg = brand-danger
+progress-bar-danger-bg = color-danger
 //** Info progress bar color
-progress-bar-info-bg = brand-info
+progress-bar-info-bg = color-info
 
 
-// = = List group
+// List group
 //
 //##
 
@@ -641,7 +605,7 @@ list-group-link-hover-color = list-group-link-color
 list-group-link-heading-color = #333
 
 
-// = = Panels
+// Panels
 //
 //##
 
@@ -660,8 +624,8 @@ panel-default-border = #ddd
 panel-default-heading-bg = #f5f5f5
 
 panel-primary-text = #fff
-panel-primary-border = brand-primary
-panel-primary-heading-bg = brand-primary
+panel-primary-border = color-primary
+panel-primary-heading-bg = color-primary
 
 panel-success-text = state-success-text
 panel-success-border = state-success-border
@@ -680,7 +644,7 @@ panel-danger-border = state-danger-border
 panel-danger-heading-bg = state-danger-bg
 
 
-// = = Thumbnails
+// Thumbnails
 //
 //##
 
@@ -699,7 +663,7 @@ thumbnail-caption-color = text-color
 thumbnail-caption-padding = 9px
 
 
-// = = Wells
+// Wells
 //
 //##
 
@@ -707,7 +671,7 @@ well-bg = #f5f5f5
 well-border = darken(well-bg, 7%)
 
 
-// = = Badges
+// Badges
 //
 //##
 
@@ -726,7 +690,7 @@ badge-line-height = 1
 badge-border-radius = 10px
 
 
-// = = Breadcrumbs
+// Breadcrumbs
 //
 //##
 
@@ -742,7 +706,7 @@ breadcrumb-active-color = gray-light
 breadcrumb-separator = "/"
 
 
-// = = Carousel
+// Carousel
 //
 //##
 
@@ -759,7 +723,7 @@ carousel-indicator-border-color = #fff
 carousel-caption-color = #fff
 
 
-// = = Close
+// Close
 //
 //##
 
@@ -768,7 +732,7 @@ close-color = #000
 close-text-shadow = 0 1px 0 #fff
 
 
-// = = Code
+// Code
 //
 //##
 
@@ -784,7 +748,7 @@ pre-border-color = #ccc
 pre-scrollable-max-height = 340px
 
 
-// = = Type
+// Type
 //
 //##
 
