@@ -1,13 +1,13 @@
 //default values
-fontSize = 14px
-fontFamily = 'Heiti Sc', simhei
+font-size-normal = 14px\/1.5
+font-family-base = 'Heiti Sc', simhei
 
 @import 'mixin/base'
 @import 'mixin/alert'
 @import 'mixin/buttons'
 
 body
-	font 12px/1.5 "Heiti SC",simhei
+	font font-size-normal font-family-base
 	clearfix()
 	opacity(.8)
 	placeholder(#fff)
