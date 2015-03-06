@@ -1,25 +1,16 @@
 //default values
-font-size-normal = 14px\/1.5
-font-family-base = 'Heiti Sc', simhei
-
-@import 'mixin/base'
+@import 'nib'
 @import 'mixin/alert'
 @import 'mixin/buttons'
-
 body
-	font font-size-normal font-family-base
 	clearfix()
-	opacity(.8)
-	placeholder(#fff)
 
 .button-test
 	button-variant(#fff,#ccc,#aaa)
 
-.button-huge 
+.button-huge
 	button-size(10px,10px,12px,24px,3px)
 
 .alert
 	alert-variant(red,red,red)
 
-
-	

@@ -3,12 +3,7 @@
  * Copyright 2011-2015 Le Rong Duo Yuan (Beijing) technology Ltd,.co.
  */
 body {
-  font: 14px/1.5 'Heiti Sc', simhei;
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
+  zoom: 1;
 }
 body:before,
 body:after {
@@ -17,15 +12,6 @@ body:after {
 }
 body:after {
   clear: both;
-}
-body::-moz-placeholder {
-  color: #fff;
-}
-body::-webkit-input-placeholder {
-  color: #fff;
-}
-body:-ms-input-placeholder {
-  color: #fff;
 }
 .button-test {
   color: #fff;
