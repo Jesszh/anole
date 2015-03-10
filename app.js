@@ -6,7 +6,8 @@ var express = require('express')
     ,bodyParser = require('body-parser')
     ,http = require('http')
     ,$ = require('jquery')
-    ,engine = require('ejs-locals');
+    ,engine = require('ejs-locals')
+    ,nib = require('nib');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -25,7 +26,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname, 'dist/css')));
 
 app.use('/', routes);
 app.use('/users', users);
