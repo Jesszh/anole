@@ -3,16 +3,27 @@
 // include the required packages.
 var gulp = require('gulp');
 var stylus = require('gulp-stylus');
+var header = require('gulp-header');
 var nib = require('nib');
 
+// set packages info 
+var pkg = require('./package.json');
+var banner = ['/*',
+  '* <%= pkg.name %> <%= pkg.description %> (<%= pkg.homepage %>)',
+  '* Copyright 2015 <%= pkg.author %>',
+  '* Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)',
+  '*/',
+  '',
+  ''].join('\n');
 
 // include, if you want to work with sourcemaps
 var sourcemaps = require('gulp-sourcemaps');
 
 // Get one .styl file and render
-gulp.task('bulid', function () {
+gulp.task('stylus', function () {
 	gulp.src('./stylus/anole.styl')
 		.pipe(stylus({ use: nib() }))
+    .pipe(header(banner, { pkg : pkg } ))
 		.pipe(gulp.dest('./dist/css/'));
 });
 
@@ -55,8 +66,8 @@ gulp.task('bulid', function () {
 // });
 
 gulp.task('watch', function () {
-  gulp.watch(['./stylus/*.styl','./stylus/mixins/*.styl'], ['bulid']);
+  gulp.watch(['./stylus/*.styl','./stylus/mixins/*.styl'], ['stylus']);
 });
 
 // Default gulp task to run
-gulp.task('default', ['bulid']);
+gulp.task('default', ['stylus']);

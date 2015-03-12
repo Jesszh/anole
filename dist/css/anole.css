@@ -1,3 +1,9 @@
+/*!
+* anole The front-end framework for developing nancy projects on the web (http://www.jimubox.com)
+* Copyright 2015 Le Rong Duo Yuan (Beijing) technology Ltd,.co.
+* Licensed under MIT (https://github.com/Jesszh/anole/blob/master/LICENSE)
+*/
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -183,12 +189,6 @@ table {
 td,
 th {
   padding: 0;
-}
-.fortest {
-  padding: 1px 1px;
-  font-size: 1px;
-  line-height: 1px;
-  border-radius: 1px;
 }
 .container {
   width: 990px;
